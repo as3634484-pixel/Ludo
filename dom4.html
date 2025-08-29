@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="col-lg-3 mx-auto">
+      <div class="card position-relative shadow lg mt-5">
+        <div class="d-flex m-0">
+          <div class="d-flex p-2">
+            <img
+              class="rounded-circle"
+              width="40px"
+              src="https://i.pinimg.com/736x/6e/a9/d8/6ea9d8d5ac75d9c5d7a2a567c1e2bbdf.jpg"
+              alt=""
+            />
+          </div>
+
+          <div class="d-flex flex-column justify-content-center">
+            <h5 class="m-0 text-black" style="font-size: 0.7rem">
+              RAC Photography
+            </h5>
+            <h6 class="text-secondary" style="font-size: 0.7rem">
+              22 August at 12:45 <i class="bi bi-globe-americas"></i>
+            </h6>
+          </div>
+          <div class="d-flex align-items-center ms-auto gap-2 p-2">
+            <i class="bi bi-three-dots"></i>
+            <i class="bi bi-x-lg"></i>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column justify-content-center m-0 p-2 pt-0">
+          <h6 style="font-size: 0.8rem" class="m-0">Our hero</h6>
+          <h6 style="font-size: 0.9rem" class="m-0">Quaid-e-Azam</h6>
+        </div>
+        <img
+          class="quaid mt-1"
+          width="100%"
+          src="https://pid.gov.pk/pid_beta/admin/uploads/profile/1.jpg"
+          alt=""
+        />
+
+        <img style=" top: 50%; left: 50%; transform: translate(-50%, -50%)
+        scale(0); transition: all 1s; " class="position-absolute heart"
+        width="90px"
+        src=https://i.pinimg.com/originals/92/40/9f/92409f75241dbe1c5962c01a3a72ccf0.gif
+        alt="" />
+        <div class="d-flex justify-content-between">
+          <div style="font-size: 0.8rem" class="d-flex">
+            <i class="bi bi-hand-thumbs-up"></i> 100
+          </div>
+          <div style="font-size: 0.8rem" class="d-flex">
+            5 comments 3 shares
+          </div>
+        </div>
+        <hr class="m-0 p-0" />
+        <div class="card rounded-0">
+          <div class="d-flex justify-content-around">
+            <!-- like button -->
+            <div class="position-relative">
+              <button
+                class="border-0 shadow-0 like"
+                style="background-color: white"
+              >
+                <i class="bi bi-hand-thumbs-up"></i> like
+              </button>
+              <div
+                class="emojis"
+                style="position: absolute; bottom: 100%"
+              ></div>
+            </div>
+            <!-- like button end -->
+            <button class="border-0 shadow-0 bg-white">
+              <i class="bi bi-chat"></i> Comment
+            </button>
+            <button class="border-0 shadow-0 bg-white">
+              <i class="bi bi-share"></i> Share
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let quaid = document.querySelector(".quaid");
+      let heart = document.querySelector(".heart");
+      let like = document.querySelector(".like");
+      let emojis = document.querySelector(".emojis");
+      quaid.addEventListener("dblclick", () => {
+        let like = new Audio("./like.mp3");
+        like.play();
+
+        heart.style.transform = "translate(-50%,-50%) scale(1)";
+        setTimeout(() => {
+          heart.style.transform = "translate(-50%,-50%) scale(0)";
+        }, 2000);
+      });
+      like.addEventListener("mouseenter", () => {
+        emojis.innerHTML = "😀 😍 😂 😮  ";
+        emojis.style.display = "block";
+        like.style.color = "Blue";
+      });
+      like.addEventListener("mouseleave", () => {
+        emojis.style.display = "none";
+
+        like.style.color = "black";
+      });
+    </script>
+  </body>
+</html>

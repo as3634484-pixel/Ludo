@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+
+    <style>
+      img {
+        transition: all 0.7s;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      width="200px"
+      src="https://images.vexels.com/media/users/3/145795/isolated/lists/05cd33059a006bf49006097af4ccba98-plane-in-flight.png"
+      alt=""
+    />
+    <div class="d-flex justify-content-center gap-2">
+      <button class="btn btn-success">Forward</button>
+      <button class="btn btn-danger">Horn</button>
+      <button class="btn btn-warning">Backward</button>
+    </div>
+
+    <script>
+      let plane = document.querySelector("img");
+      let forward = document.querySelector(".btn-success");
+      let backward = document.querySelector(".btn-warning");
+      let horn = document.querySelector(".btn-danger");
+
+      forward.addEventListener("click", () => {
+        plane.style.transform = `translateX(${window.innerWidth - 200}px)`;
+      });
+
+      backward.addEventListener("click", () => {
+        plane.style.transform = "translateX(0) rotateY(180deg)";
+      });
+
+      horn.addEventListener("click", () => {
+        let voice = new Audio("./horn.mp3");
+        voice.play();
+      });
+    </script>
+  </body>
+</html>

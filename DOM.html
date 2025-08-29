@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        width: max-content;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="heading">Assalam-o-Alaikum</h1>
+
+    <button id="btn">Change or back to default</button>
+
+    <script>
+      //let head = document.getElementsByClassName("heading");
+      //console.log(head[0]);
+
+      let head = document.querySelector(".heading");
+      let button = document.querySelector("#btn");
+
+      button.addEventListener("click", () => {
+        if (head.innerHTML == "Assalam-o-Alaikum") {
+          head.innerHTML = "Walaikum Assalam";
+          head.style.color = "blue";
+          head.style.background = "red";
+          head.style.borderRadius = "8px";
+        } else {
+          head.innerHTML = "Assalam-o-Alaikum";
+          head.style.color = "black";
+          head.style.borderRadius = 0;
+          head.style.background = "white";
+        }
+      });
+    </script>
+  </body>
+</html>
