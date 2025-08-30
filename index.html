@@ -10,6 +10,13 @@
       crossorigin="anonymous"
     />
     <title>Document</title>
+    <style>
+      body {
+        ::selection {
+          background-color: transparent;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -72,13 +79,18 @@
       };
 
       p1_btn.addEventListener("click", () => {
+        p1_btn.disabled = true;
+        p2_btn.disabled = false;
         let value1 = randomNumber();
+
         score1 += value1;
         p1_img.src = `faces/${value1}.png`;
         checkWinner();
       });
 
       p2_btn.addEventListener("click", () => {
+        p2_btn.disabled = true;
+        p1_btn.disabled = false;
         let value2 = randomNumber();
         score2 += value2;
         p2_img.src = `faces/${value2}.png`;
